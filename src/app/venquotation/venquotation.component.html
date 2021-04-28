@@ -1,0 +1,93 @@
+<ngx-spinner
+    bdColor="rgba(0,0,0,0.8)"
+    size="medium"
+    color="whitesmoke"
+    type="ball-clip-rotate-multiple"
+   >
+   <p style="font-size: 20px; color: whitesmoke">Fetching details...</p>
+</ngx-spinner>
+<html>
+    <head></head>
+    <body>
+    <div class="dropdwn">
+        <nav>
+         <img src="assets/logo.png" class="logo">
+         <h4>VENDOR QUOTATION</h4>
+         <div class="dd">
+            <ul>
+                <li>
+                    <button mat-button [matMenuTriggerFor]="menu">
+                        <mat-icon>account_circle</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu" xPosition="after">
+                        <button mat-menu-item (click)="bck()">
+                            <mat-icon>exit_to_app</mat-icon>
+                            Sign out
+                        </button>
+                    </mat-menu>
+                </li>
+            </ul>
+        </div>
+        </nav>
+    </div>
+    <h4 class="hea">{{title}}</h4>
+    <table *ngIf = "headvisible" class="styled-table">
+        <thead>
+        <tr>
+            <th>S.No</th>
+            <th>Quotation Number</th>
+            <th>Purchase Document Number</th>
+            
+            <th>Quotation Submission date </th>
+            <th>Vendor id</th>
+            <th>Language Key</th>
+            <th>Exchange Rate</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr *ngFor="let saleob of header; let i = index" class="k-alt">
+            <td>{{i + 1}}</td>
+            <td><button class="but" (click) = "ok(saleob)">{{saleob.ANGNR['_text']}}</button></td>
+            <td>{{saleob.EBELN['_text']}}</td>
+        
+            <td>{{saleob.IHRAN['_text']}}</td>
+            <td>{{saleob.LIFNR['_text']}}</td>
+            <td>{{saleob.SPRAS['_text']}}</td>
+            <td>{{saleob.WKURS['_text']}}</td>
+        </tr>
+    </tbody>
+    </table>
+ 
+    <table *ngIf = "itemvisible" class="styled-table">
+        <thead>
+        <tr>
+            <th>S.No</th>
+            <th>Purchase Document Number</th>
+            <th>Material Number</th>
+            <th>Material Description</th>
+            <th>Material Group</th>
+            <th>Purchase Order Quantity</th>
+            <th>Net Price</th>
+            <th>Net Order value</th>
+            <th>Order Price Unit</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr *ngFor="let saleob of items; let i = index" class="k-alt">
+            <td>{{i + 1}}</td>
+            <td>{{saleob.EBELN['_text']}}</td>
+            <td>{{saleob.MATNR['_text']}}</td>
+            <td>{{saleob.TXZ01['_text']}}</td>
+            <td>{{saleob.MATKL['_text']}}</td>
+            <td>{{saleob.MENGE['_text']}}</td>
+            <td>{{saleob.NETPR['_text']}}</td>
+            <td>{{saleob.NETWR['_text']}}</td>
+            <td>{{saleob.BPRME['_text']}}</td>
+        </tr>
+    </tbody>
+    </table>
+    <button *ngIf = "itemvisible" class="button button1" (click)="backit()" >BACK</button>
+    <button *ngIf = "headvisible" class="button button1" (click)="back()" >BACK</button> 
+    <div class="dummy"></div>
+</body>
+</html>

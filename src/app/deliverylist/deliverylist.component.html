@@ -1,0 +1,58 @@
+<ngx-spinner
+    bdColor="rgba(0,0,0,0.8)"
+    size="medium"
+    color="whitesmoke"
+    type="ball-clip-rotate-multiple"
+   >
+   <p style="font-size: 20px; color: whitesmoke">Fetching details...</p>
+</ngx-spinner>
+<html>
+    <head>
+       </head>
+<body class="bdy">
+    <div class="dropdwn">
+        <nav>
+         <img src="assets/logo.png" class="logo">
+         <h4>LIST OF DELIVERY</h4>
+         <div class="dd">
+            <ul>
+                <li>
+                    <button mat-button [matMenuTriggerFor]="menu">
+                        <mat-icon>account_circle</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu" xPosition="after">
+                        <button mat-menu-item (click)="bck()">
+                            <mat-icon>exit_to_app</mat-icon>
+                            Sign out
+                        </button>
+                    </mat-menu>
+                </li>
+            </ul>
+        </div>
+        </nav>
+    </div>
+<table class="styled-table">
+    <thead >
+    <tr>
+        <th scope="col">SNO</th>
+        <th scope="col">Sale Document Number</th>
+        <th scope="col">Delivery Item</th>
+        <th scope="col">Delivery Date</th>
+        <th scope="col">Person Name</th> 
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let sale of del; let i = index" class="k-alt">
+        <td >{{i + 1}}</td>
+        <td><button class="but" (click) = "ok(sale)">{{+sale.VBELN['_text']}}</button></td>
+        <td>{{+sale.POSNR['_text']}}</td>
+        <td>{{sale.LFDAT['_text']}}</td>
+        <td>{{sale.ERNAM['_text']}}</td>
+       
+    </tr>
+</tbody>
+</table>
+<button (click) ="back()"  class="button button1">BACK</button> 
+<div class="dummy"></div>
+</body>
+</html>

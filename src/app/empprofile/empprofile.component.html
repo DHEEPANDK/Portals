@@ -1,0 +1,34 @@
+<body class="bdy">
+    <div class="dropdwn">
+        <nav>
+         <img src="assets/logo.png" class="logo">
+         <h4>EMPLOYEE PROFILE</h4>
+         <div>
+         <a routerLink = "/employeelogin" class="logout_btn">LogOut</a>
+        </div>
+        </nav>
+    </div>
+    <div class="container-contact100">
+            <div class="wrap-contact100">
+                <form>
+                    <table border="0">
+                        <tr><td>Employee id</td><td>:</td><b>{{pernr}}</b></tr>
+                        <tr><td>Employee name</td><td>:</td><b>{{vorna}}</b></tr>
+                        <tr><td>Gender</td><td>:</td><b>{{gesch}}</b></tr>
+                        <tr><td>Date of Birth</td><td>:</td><b>{{gbdat}}</b></tr>
+                        <tr><td>Country</td><td>:</td><b>{{gblnd}}</b></tr>
+                        <tr><td>State</td><td>:</td><b>{{gbdep}}</b></tr>
+                        <tr><td>Age</td><td>:</td><b>{{age}}</b></tr>
+                    </table>
+                    
+                    <div class="container-contact100-form-btn">
+                        <a routerLink = "/employeelogin/empdashboard/empprofileupd" class="contact100-form-btn">Edit</a>
+                        <a routerLink = "/employeelogin/empdashboard" class="contact100-form-btn">Back</a>
+                    </div>
+                </form>
+            </div>
+        </div> 
+    </body>
+    
+     
+    

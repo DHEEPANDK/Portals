@@ -1,0 +1,265 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+header {
+    position: fixed;
+    z-index: 12;
+    height: 100px;
+    width: 100%;   
+}
+
+.menu-bar {
+    background :rgb(165,42,42);
+    text-align: center;    
+    margin-top: -6px;
+}
+.menu-bar ul {
+    display: inline-flex;
+    list-style: none;
+    color: #fff;
+}
+.menu-bar ul li {
+    width: 120px;
+    margin: 15px;
+    padding: 15px;
+}
+.menu-bar ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+.active,.menu-bar ul li:hover{
+background: #800000;
+border-radius: 3px;
+border-bottom : orange solid 3px;
+}
+
+.sub-menu { 
+    display: none;
+}
+
+.menu-bar ul li:hover .sub-menu {
+     display: block;
+     position: absolute;
+     background: #917567; 
+     margin-top: 18px;
+     margin-left: -15px;
+}
+
+.menu-bar ul li:hover .sub-menu ul{
+    display: block;
+    margin: 10px;
+}
+
+.menu-bar ul li:hover .sub-menu ul li{
+    width: 81px;
+    padding: 10px;
+    border-bottom: 1px dotted #fff;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+}
+
+.menu-bar ul li:hover .sub-menu ul li:last-child{
+   border-bottom: none;
+}
+
+.menu-bar ul li:hover .sub-menu ul li a:hover{
+    color:#FF4500;
+}
+
+.logo{
+    width: 30%;
+    float: left;
+    line-height: 50px;
+}
+
+.banner-area {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    top: 85px;
+    background-image: url(/assets/bgm2.jpg);
+    -webkit-background-size : cover;
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    padding-left: 14px;
+}
+
+.banner-area h2{
+    text-align: center;
+    padding-top: 8%;
+    font-size: 60px;
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    color: #800000;
+}
+
+.banner-area small{ 
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    color : red;
+}
+.content-area {
+    width: 100%;
+    position: relative;
+    top: 83px;
+    background: #ddd;
+    height: 350px;
+    border-bottom : solid brown 3px;
+    border-top: solid brown 3px;
+    padding-left: 14px;
+    
+}
+
+.content-area h1{
+     color : brown;
+     padding: 20px;
+     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+     font-size: 30px;
+     font-style: normal;
+}
+
+
+.content-area p {
+     padding: 20px;
+     font-size: 15px;
+     font-family: 'Times New Roman', Times, serif;
+}
+
+
+
+.carrers {
+    border: black;
+    width: 100%;
+    position: relative;
+    top: 83px;
+    background : lightsalmon;
+    height: 300px;
+    text-align: center;
+    border-bottom: solid brown 3px;
+    padding-left: 14px;
+}
+
+.carrers h1 {
+    padding: 20px;
+    color: blueviolet;
+    font-size: 35px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.carrers span {
+    color: red;
+}
+
+.carrers h4{
+    padding: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 19px;
+}
+.carrers p {
+   font-size: 17px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.foot {
+    height: 120px;
+    width: 100%;
+    position: relative;
+    background-color: whitesmoke;
+    top: 83px;
+    padding-left: 14px;
+}
+
+.foot ul{
+    display: inline-flex;
+    list-style: none;
+    padding-top: 0px;
+    padding-left: 560px;   
+    
+}
+
+.foot ul li {
+    padding-bottom: 10px;
+    padding-left: 50px;
+}
+
+.foot ol{
+    display: inline-flex;
+    list-style: none;
+    padding-left: 320px;
+    padding-top: 18px;
+}
+
+.foot ol li {
+    padding-left: 5px;
+}
+
+.foot ol li h4 {
+    font-size: 12px;
+    font-family: 'Courier New', Courier, monospace;
+    padding-right: 15px;
+    padding-top: 5px;
+}
+
+.foot small {
+    font-size: 11px;
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 470px;
+}
+
+.portal {
+    height: 870px;
+    width: 100%;
+    position: relative;
+    background-color: lightblue;
+    top: 83px;
+    padding-top: 5px;
+    border-bottom: solid brown 5px;
+    padding-left: 14px;
+    
+}
+
+
+.block {
+    margin: 5px;
+    float: left;
+    width: 32%;
+    border: 2px solid brown;
+    padding: 10px;
+    padding-right: 37px;
+    box-sizing: border-box;
+    background : #f2f2f2;
+    border-radius: 23px;
+}
+
+
+.portal h2{
+    color : brown;
+    padding: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 30px;
+    font-style: normal;
+}
+
+.block h3 {
+    padding-top: 15px;
+    padding-bottom: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 24px;
+    color: red;
+}
+
+.block p {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding-bottom: 17px;
+    padding-top: 5px;
+    font-size: 17px;
+}
+

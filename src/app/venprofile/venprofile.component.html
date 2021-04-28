@@ -1,0 +1,34 @@
+<body class="bdy">
+    <div class="dropdwn">
+        <nav>
+         <img src="assets/logo.png" class="logo">
+         <h4>VENDOR PROFILE</h4>
+         <div>
+         <a routerLink = "/vendorlogin" class="logout_btn">LogOut</a>
+        </div>
+        </nav>
+    </div>
+    <div class="container-contact100">
+            <div class="wrap-contact100">
+                <form >
+                    <table border="0">
+                        <tr><td>vendor id</td><td>:</td><b>{{id}}</b></tr>
+                        <tr><td>vendor name</td><td>:</td><b>{{name}}</b></tr>
+                        <tr><td>region</td><td>:</td><b>{{region}}</b></tr>
+                        <tr><td>street</td><td>:</td><b>{{street}}</b></tr>
+                        <tr><td>city</td><td>:</td><b>{{city}}</b></tr>
+                        <tr><td>country</td><td>:</td><b>{{country}}</b></tr>
+                        <tr><td>postal code</td><td>:</td><b>{{post}}</b></tr>
+                    </table>
+                    
+                    <div class="container-contact100-form-btn">
+                        <a routerLink = "/vendorlogin/vendordashboard/vendorprofileupdt" class="contact100-form-btn">Edit</a>
+                        <a routerLink = "/vendorlogin/vendordashboard" class="contact100-form-btn">Back</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+    
+     
+    

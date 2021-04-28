@@ -1,0 +1,112 @@
+<ngx-spinner
+    bdColor="rgba(0,0,0,0.8)"
+    size="medium"
+    color="whitesmoke"
+    type="ball-clip-rotate-multiple"
+   >
+  <p style="font-size: 20px; color: whitesmoke">Updating...</p>
+</ngx-spinner>
+<html>
+<style>
+input[type=text], select {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  margin-left:60px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=date] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  margin-left:60px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+h3{
+padding-left : 200px;
+}
+
+.sy{
+color:white;
+}
+.mat-toolbar span{
+    margin-left: 113px;
+}
+
+.button {
+  background-color: #628cc9; /* Green */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 6px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 40px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #628cc9;
+}
+.button1:hover {
+  background-color: #628cc9;
+  color: white;
+}
+
+</style>
+<body>
+
+    <mat-toolbar color="primary">
+       <span>Update Profile</span>
+      </mat-toolbar>
+
+<div>
+  
+    <label for="first-name">Employee Id<span class="sy">......</span> </label>
+    <input id="eid"  type="text" name="first-name" value="{{+list[0].PERNR['_text']}}" disabled = "true" >  <br/>                
+                   
+   <label for="email">Employee Name<span class="sy"></span></label>
+   <input id="vorna" type="text" name="email" value="{{list[0].VORNA['_text']}}" #myinput><br/>
+                        
+    <label for="phone">Gender<span class="sy">...............</span></label>
+    <input id="gesch"  type="text" name="phone" value="{{list[0].GESCH['_text']}}"><br/>
+                        
+    <label for="message">Date of Birth<span class="sy">.....</span></label>
+    <input id="gbdat"  type="date" name="phone" value="{{list[0].GBDAT['_text']}}"><br/>
+                        
+    <label  for="message">Country<span class="sy">.............</span></label>
+    <input id="gblnd"  type="text" name="phone" value="{{list[0].GBLND['_text']}}"><br/>
+                      
+    <label  for="message">State<span class="sy">.................</span></label>
+    <input id="gbdep"  type="text" name="phone" value="{{list[0].GBDEP['_text']}}"><br/>
+                        
+     <label  for="message">Age<span class="sy">..................</span></label>
+     <input id="age" type="text" name="phone" value="{{list[0].AGE['_text']}}"><br/>
+                       
+    <div mat-dialog-actions>
+        <button class="button button1" (click) = "updt1()">Update</button>
+        <button class="button button1" mat-button mat-dialog-close>Back</button>
+      </div> 
+</div>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<div mat-dialog-title style="float: right; font-weight: 700; cursor: pointer;margin-top: -26px;margin-right: -20px;" (click)="close()"><mat-icon>clear</mat-icon></div>
+<table class="styled-table" *ngIf = "pay">
+    <thead>
+    <tr>
+        <th>Accounting Document Number</th>
+        <th>Currency Key</th>
+        <th>Updated Currency</th>
+        <th>Amount to be Updated</th> 
+        <th>Debit/Credit Indicator</th>
+        <th>Amount in document Currency</th>
+        <th>Terms of Payment key</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>{{+sale.BELNR['_text']}}</td>
+        <td>{{sale.WAERS['_text']}}</td>
+        <td>{{sale.PSWSL['_text']}}</td>
+        <td>{{sale.PSWBT['_text']}}</td>
+        <td>{{sale.SHKZG['_text']}}</td>
+        <td>{{sale.WRBTR['_text']}}</td>
+        <td>{{+sale.ZTERM['_text']}}</td>
+    </tr>
+</tbody>
+</table>
+
+<table class="styled-table" *ngIf = "del">
+    <thead>
+    <tr>
+        <th>Goods issue date</th>
+        <th>Loading date</th>
+        <th>Picking date</th> 
+        <th>Total Weight</th>
+        <th>Net Weight</th>
+        <th>Material Number</th>
+        <th>Basic Unit of Measure</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>{{sale.WADAT['_text']}}</td>
+        <td>{{sale.LDDAT['_text']}}</td>
+        <td>{{sale.KODAT['_text']}}</td>
+        <td>{{sale.BTGEW['_text']}}</td>
+        <td>{{sale.NTGEW['_text']}}</td>
+        <td>{{sale.MATNR['_text']}}</td>
+        <td>{{sale.MEINS['_text']}}</td>
+    </tr>
+</tbody>
+</table>
+
+<table class="styled-table" *ngIf = "inv">
+    <thead>
+    <tr>
+        <th>Sales Organisation</th>
+        <th>Distribution Channel</th>
+        <th>Billing date</th> 
+        
+        <th>Actual Invoice Quantity</th>
+        <th>Basic Unit of Measure</th>
+        <th>Description</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>{{sale.VKORG['_text']}}</td>
+        <td>{{sale.VTWEG['_text']}}</td>
+        <td>{{sale.FKDAT['_text']}}</td>
+        
+        <td>{{sale.FKIMG['_text']}}</td>
+        <td>{{sale.MEINS['_text']}}</td>
+        <td>{{sale.ARKTX['_text']}}</td>
+    </tr>
+</tbody>
+</table>
+

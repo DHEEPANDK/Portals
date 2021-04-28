@@ -1,0 +1,41 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button mat-icon-button (click)="toggleSidenav()" >
+            <mat-icon>menu</mat-icon>
+        </button>
+  
+        <span>  <img src="assets/logo.png" height="63px" width="75px"> </span>
+         <h3>EHSM DASHBOARD</h3>
+         <div class="dd">
+          <ul>
+              <li>
+                  <button mat-button [matMenuTriggerFor]="menu">
+                      <mat-icon>account_circle</mat-icon>
+                  </button>
+                  <mat-menu #menu="matMenu" xPosition="after">
+                      <button mat-menu-item (click)="back()">
+                          <mat-icon>exit_to_app</mat-icon>
+                          Sign out
+                      </button>
+                  </mat-menu>
+              </li>
+          </ul>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-sidenav-container>
+      <mat-sidenav  #sidenav mode="side" opened class="example-container">
+          <div class="image-cropper">
+              <div id="image1" class="cropcircle"></div>
+      </div>
+      <mat-nav-list><mat-divider></mat-divider>
+          <h2 matSubheader>Pages</h2>
+  
+      <a mat-list-item [routerLinkActive]="['is-active']" routerLink="/ehsmlogin/dboard"><mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon><div class="space">Dashboard</div></a>
+      <a mat-list-item [routerLinkActive]="['is-active']" routerLink="/ehsmlogin/incident"><mat-icon aria-hidden="false" aria-label="Example home icon">notification_important</mat-icon><div class="space">Incident</div></a>
+      <a mat-list-item [routerLinkActive]="['is-active']" routerLink="/ehsmlogin/risk"><mat-icon aria-hidden="false" aria-label="Example home icon">work_outline</mat-icon><div class="space">Risk Assessment</div></a>
+  
+      </mat-nav-list><mat-divider></mat-divider>
+      </mat-sidenav>
+      <mat-sidenav-content></mat-sidenav-content>
+    </mat-sidenav-container>

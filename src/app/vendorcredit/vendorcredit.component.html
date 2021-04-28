@@ -1,0 +1,69 @@
+<ngx-spinner
+    bdColor="rgba(0,0,0,0.8)"
+    size="medium"
+    color="whitesmoke"
+    type="ball-clip-rotate-multiple"
+   >
+   <p style="font-size: 20px; color: whitesmoke">Fetching details...</p>
+</ngx-spinner>
+<html>
+    <head></head>
+    <body>
+    <div class="dropdwn">
+        <nav>
+         <img src="assets/logo.png" class="logo">
+         <h4>CREDIT MEMO</h4>
+         <div class="dd">
+            <ul>
+                <li>
+                    <button mat-button [matMenuTriggerFor]="menu">
+                        <mat-icon>account_circle</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu" xPosition="after">
+                        <button mat-menu-item (click)="bck()">
+                            <mat-icon>exit_to_app</mat-icon>
+                            Sign out
+                        </button>
+                    </mat-menu>
+                </li>
+            </ul>
+        </div>
+        </nav>
+    </div>
+    <table class="styled-table">
+        <thead>
+        <tr>
+            <th>S.No</th>
+            <th>Accounting Document Number</th>
+            <th>Company code</th>
+           
+            <th>Clearing Document Number</th>
+            <th>Amount in Local Currency</th>
+            <th>Amount in Document Currency</th>
+            <th>Ledger updation Amount</th>
+            
+            <th>Controlling area</th>
+            <th>Discount Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr *ngFor="let saleob of credtls; let i = index" class="k-alt">
+            <td>{{i + 1}}</td>
+            <td>{{saleob.BELNR['_text']}}</td>
+            <td>{{saleob.BUKRS['_text']}}</td>
+          
+            <td>{{saleob.AUGBL['_text']}}</td>
+            <td>{{saleob.DMBTR['_text']}}</td>
+            <td>{{saleob.WRBTR['_text']}}</td>
+            <td>{{saleob.PSWBT['_text']}}</td>
+            
+            <td>{{saleob.KOKRS['_text']}}</td>
+            <td>{{saleob.SKFBT['_text']}}</td>
+        </tr>
+    </tbody>
+    </table>
+    <button class="button button1" (click)="back()" >BACK</button> 
+    <div class="dummy"></div>
+</body>
+</html>
+

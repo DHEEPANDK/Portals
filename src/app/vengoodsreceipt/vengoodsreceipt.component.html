@@ -1,0 +1,72 @@
+<ngx-spinner
+    bdColor="rgba(0,0,0,0.8)"
+    size="medium"
+    color="whitesmoke"
+    type="ball-clip-rotate-multiple"
+   >
+   <p style="font-size: 20px; color: whitesmoke">Fetching details...</p>
+</ngx-spinner>
+<html>
+    <head></head>
+    <body>
+    <div class="dropdwn">
+        <nav>
+         <img src="assets/logo.png" class="logo">
+         <h4>GOODS RECEIPT</h4>
+         <div class="dd">
+            <ul>
+                <li>
+                    <button mat-button [matMenuTriggerFor]="menu">
+                        <mat-icon>account_circle</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu" xPosition="after">
+                        <button mat-menu-item (click)="bck()">
+                            <mat-icon>exit_to_app</mat-icon>
+                            Sign out
+                        </button>
+                    </mat-menu>
+                </li>
+            </ul>
+        </div>
+        </nav>
+    </div>
+
+    <table class="styled-table">
+        <thead>
+        <tr>
+            <th>S.No</th>
+            
+            <th>Material Document Number</th>
+           
+            <th>Material Number</th>
+            <th>Plant</th>
+            <th>Storage Location</th>
+            <th>Currency Key</th>
+            <th>Amount in Local Currency</th>
+            <th>Quantity</th>
+            <th>Quantity in Unit of Entry</th>
+            <th>Quantity in PO Price Unit</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr *ngFor="let saleob of quotdtls; let i = index" class="k-alt">
+            <td>{{i + 1}}</td>
+            
+            <td>{{saleob.MBLNR['_text']}}</td>
+            
+            <td>{{+saleob.MATNR['_text']}}</td>
+            <td>{{saleob.WERKS['_text']}}</td>
+            <td>{{saleob.LGORT['_text']}}</td>
+            <td>{{saleob.WAERS['_text']}}</td>
+            <td>{{saleob.DMBTR['_text']}}</td>
+            <td>{{saleob.MENGE['_text']}}</td>
+            <td>{{saleob.ERFMG['_text']}}</td>
+            <td>{{saleob.BPMNG['_text']}}</td>
+        </tr>
+    </tbody>
+    </table>
+ 
+    <button class="button button1" (click)="back()" >BACK</button> 
+    <div class="dummy"></div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<ngx-spinner
+    bdColor="rgba(0,0,0,0.8)"
+    size="medium"
+    color="whitesmoke"
+    type="ball-clip-rotate-multiple"
+   >
+   <p style="font-size: 20px; color: whitesmoke">Fetching details...</p>
+</ngx-spinner>
+<html>
+    <head></head>
+    <body>
+    <div class="dropdwn">
+        <nav>
+         <img src="assets/logo.png" class="logo">
+         <h4>{{title}}</h4>
+         <div class="dd">
+            <ul>
+                <li>
+                    <button mat-button [matMenuTriggerFor]="menu">
+                        <mat-icon>account_circle</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu" xPosition="after">
+                        <button mat-menu-item (click)="bck()">
+                            <mat-icon>exit_to_app</mat-icon>
+                            Sign out
+                        </button>
+                    </mat-menu>
+                </li>
+            </ul>
+        </div>
+        </nav>
+    </div>
+
+    <table *ngIf = "tbl1" class="styled-table">
+        <thead>
+        <tr>
+            <th>S.No</th>
+            <th>Accounting Document Number</th>
+            <th>Vendor id</th>
+            <th>Company code</th>
+            <th>Clearing date</th>
+            <th>Document no of Clearing document</th>
+         
+            <th>Posting date</th>
+            <th>Currency Key</th>
+            <th>Amount in Local Currency</th>
+            <th>G/L Account Number</th>
+            <th>Discount rate</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr *ngFor="let saleob of invdtls; let i = index" class="k-alt">
+            <td>{{i + 1}}</td>
+            <td>{{saleob.BELNR['_text']}}</td>
+            <td>{{saleob.LIFNR['_text']}}</td>
+            <td>{{saleob.BUKRS['_text']}}</td>
+            <td>{{saleob.AUGDT['_text']}}</td>
+            <td>{{saleob.AUGBL['_text']}}</td>
+           
+            <td>{{saleob.BUDAT['_text']}}</td>
+            <td>{{saleob.WAERS['_text']}}</td>
+            <td>{{saleob.DMBTR['_text']}}</td>
+            <td>{{+saleob.SAKNR['_text']}}</td>
+            <td>{{saleob.SKFBT['_text']}}</td>
+        </tr>
+    </tbody>
+    </table>
+
+    <table *ngIf = "tbl2" class="styled-table">
+        <thead>
+        <tr>
+            <th>S.No</th>
+            <th>Accounting Document Number</th>
+            <th>Vendor id</th>
+            <th>Company code</th>
+           
+            <th>Posting date</th>
+            <th>Currency Key</th>
+            <th>Amount in Local Currency</th>
+            <th>G/L Account Number</th>
+            <th>Discount rate</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr *ngFor="let saleob of invdtls; let i = index" class="k-alt">
+            <td>{{i + 1}}</td>
+            <td>{{saleob.BELNR['_text']}}</td>
+            <td>{{saleob.LIFNR['_text']}}</td>
+            <td>{{saleob.BUKRS['_text']}}</td>
+            
+            <td>{{saleob.BUDAT['_text']}}</td>
+            <td>{{saleob.WAERS['_text']}}</td>
+            <td>{{saleob.DMBTR['_text']}}</td>
+            <td>{{+saleob.SAKNR['_text']}}</td>
+            <td>{{saleob.SKFBT['_text']}}</td>
+        </tr>
+    </tbody>
+    </table>
+    <button class="button button1" (click)="back()" >BACK</button> 
+    <div class="dummy"></div>
+</body>
+</html>

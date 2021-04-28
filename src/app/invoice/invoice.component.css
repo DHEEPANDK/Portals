@@ -1,0 +1,117 @@
+body {
+  /* margin: 0;*/
+   padding: 0;
+   background-color: azure;
+   margin: -10px;
+ 
+ }
+ .dropdwn {
+   margin: 0 auto;
+ }
+ nav{
+     height: 90px;
+     background: #0038a8;
+     margin: -10px;
+ }
+ nav h4{
+  text-align: center;
+  margin-top: -57px;
+  color: white;
+font-size: 30px;
+font-family: "Times New Roman";
+ }
+
+ .logo {
+     padding: 5px 0 0 80px;
+     width: 79px;
+     height: auto;
+ }
+ 
+ .dd{
+  padding-left: 1150px;
+  margin-top: -90px;
+}
+
+.dd button {
+
+border: none;
+background: none;
+color: white;
+outline: none;
+}
+
+.dd mat-icon {
+  font-size: 60px;
+}
+
+ 
+.button {
+  background-color: #628cc9; /* Green */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 6px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 650px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #628cc9;
+}
+.button1:hover {
+  background-color: #628cc9;
+  color: white;
+}
+ .dummy {
+   padding-top : 170px;
+ }
+ 
+ .styled-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  margin-left: 290px;
+  margin-top: 100px;
+}
+
+.styled-table thead tr {
+background-color: #628cc9;
+color: #ffffff;
+text-align: left;
+}
+.styled-table th,
+.styled-table td {
+padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+border-bottom: 2px solid #628cc9;
+}
+
+.but {
+  background: none!important;
+ border-style: none;
+  padding: 0!important;
+
+  color: #628cc9;
+  text-decoration: underline;
+  cursor: pointer;
+}

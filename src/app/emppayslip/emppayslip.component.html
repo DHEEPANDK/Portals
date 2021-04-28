@@ -1,0 +1,135 @@
+<ngx-spinner
+    bdColor="rgba(0,0,0,0.8)"
+    size="medium"
+    color="whitesmoke"
+    type="ball-clip-rotate-multiple"
+   >
+  <p style="font-size: 20px; color: whitesmoke">Loading data...</p>
+</ngx-spinner>
+
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button mat-icon-button (click)="toggleSidenav()" >
+            <mat-icon>menu</mat-icon>
+        </button>
+  
+        <span>  <img src="assets/logo.png" height="63px" width="75px"> </span>
+         <h3>EMPLOYEE PAYSLIP</h3>
+         <div class="dd">
+          <ul>
+              <li>
+                  <button mat-button [matMenuTriggerFor]="menu">
+                      <mat-icon>account_circle</mat-icon>
+                  </button>
+                  <mat-menu #menu="matMenu" xPosition="after">
+                      <button mat-menu-item (click)="back()">
+                          <mat-icon>exit_to_app</mat-icon>
+                          Sign out
+                      </button>
+                  </mat-menu>
+              </li>
+          </ul>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-sidenav-container>
+      <mat-sidenav  #sidenav mode="side" opened class="example-container">
+          <div class="image-cropper">
+              <div id="image1" class="cropcircle"></div>
+      </div>
+      <mat-nav-list><mat-divider></mat-divider>
+          <h2 matSubheader>Pages</h2>
+  
+      <a mat-list-item [routerLinkActive]="['is-active']" routerLink="/employeelogin/empdashboard"><mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon><div class="space">Dashboard</div></a>
+      <a mat-list-item [routerLinkActive]="['is-active']" routerLink="/employeelogin/empleave"><mat-icon aria-hidden="false" aria-label="Example home icon">calendar_today</mat-icon><div class="space">Leave</div></a>
+      <a mat-list-item [routerLinkActive]="['is-active']" routerLink="/employeelogin/emppayslip"><mat-icon aria-hidden="false" aria-label="Example home icon">payments</mat-icon><div class="space">Payslip</div></a>
+  
+      </mat-nav-list><mat-divider></mat-divider>
+      </mat-sidenav>
+      <mat-sidenav-content>
+         
+          <mat-card class="example-card" *ngIf = "show">
+              <mat-card-header>
+              </mat-card-header>
+              <mat-card-content>
+                  <table border="0" class="tbl">
+                      <tr><td>MONTH</td><td>:</td><td><input type="month" id="fdate"></td></tr>
+                  </table>
+              </mat-card-content>
+              <mat-card-actions>
+                  <button class="bn bn1" (click) = "updt1()">Get</button>
+              </mat-card-actions>
+            </mat-card>
+            <mat-card class="example-card1" *ngIf = "show1">
+                <mat-card-header>
+                </mat-card-header>
+                <mat-card-content>
+                    <div class="payslip3">
+                        <img src="assets/logo.png" height="80px" width="80px">
+                        <p>KAAR TECHNOLOGIES</p>
+                    </div>
+                   <div class="payslip">
+                    <div class="fir">
+                        <p>Employee id<a>12345678.</a>:<a>....</a><b>{{+profarray.PERNR['_text']}}</b></p>
+                        <p>Employee Name<a>1234..</a>  :<a>....</a><b>{{profarray.VORNA['_text']}}</b></p>
+                    </div>
+                    <div class="fir1">
+                        <p>Year<a>123456789..</a>:<a>.......</a><b>{{profarray.PYEAR['_text']}}</b></p>
+                        <p>Month<a>1234567...</a>:<a>.......</a><b>{{profarray.PMONTH['_text']}}</b></p>
+                        <p>Bank<a>12345678...</a>:<a>.......</a><b>IDBI Bank</b></p>
+                    </div>
+                   </div>
+                   <table>
+                    <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Earnings</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Basic Salary</td>
+                        <td>{{profarray.BET01['_text']}}</td>
+                    </tr>
+                    <tr>
+                        <td>Medical Allowance</td>
+                        <td>{{profarray.BET02['_text']}}</td>
+                    </tr>
+                    <tr>
+                        <td>Transportation Allowance</td>
+                        <td>{{profarray.BET03['_text']}}</td>
+                    </tr>
+                    <tr>
+                        <td>Meal Allowance</td>
+                        <td>{{profarray.BET04['_text']}}</td>
+                    </tr>
+                </tbody>
+                </table>
+                <div class="payslip1">
+                    <div class="fir3">
+                        <p>TOTAL</p>
+                    </div>
+                    <div class="fir2">
+                        <p>{{profarray.PTOTAL['_text']}}</p>
+                        
+                    </div>
+                   </div>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button class="bnn bn1" (click) = "bck()">Back</button>
+                </mat-card-actions>
+            </mat-card>
+
+
+            <mat-card class="example-card" *ngIf = "show3">
+                <mat-card-header>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>No Payslip found for this month!!!</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button class="bn bn1" (click) = "bck()">Back</button>
+                </mat-card-actions>
+              </mat-card>
+      </mat-sidenav-content>
+    </mat-sidenav-container>

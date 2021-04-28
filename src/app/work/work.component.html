@@ -1,0 +1,88 @@
+<ngx-spinner
+    bdColor="rgba(0,0,0,0.8)"
+    size="medium"
+    color="whitesmoke"
+    type="ball-clip-rotate-multiple"
+   >
+  <p style="font-size: 20px; color: whitesmoke">Loading data...</p>
+</ngx-spinner>
+
+
+
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button mat-icon-button (click)="toggleSidenav()" >
+            <mat-icon>menu</mat-icon>
+        </button>
+  
+        <span>  <img src="assets/logo.png" height="63px" width="75px"> </span>
+         <h3>WORK ORDER</h3>
+        <div class="dd">
+            <ul>
+                <li>
+                    <button mat-button [matMenuTriggerFor]="menu">
+                        <mat-icon>account_circle</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu" xPosition="after">
+                        <button mat-menu-item (click)="back()">
+                            <mat-icon>exit_to_app</mat-icon>
+                            Sign out
+                        </button>
+                    </mat-menu>
+                </li>
+            </ul>
+        </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-sidenav-container>
+      <mat-sidenav  #sidenav mode="side" opened class="example-container">
+          <div class="image-cropper">
+              <div id="image1" class="cropcircle"></div>
+      </div>
+      <mat-nav-list><mat-divider></mat-divider>
+          <h2 matSubheader>Pages</h2>
+  
+          <a mat-list-item [routerLinkActive]="['is-active']" routerLink="/maintenancelogin/maindashboard"><mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon><div class="space">Dashboard</div></a>
+          <a mat-list-item [routerLinkActive]="['is-active']" routerLink="/maintenancelogin/notif"><mat-icon aria-hidden="false" aria-label="Example home icon">notification_important</mat-icon><div class="space">Notifications</div></a>
+          <a mat-list-item [routerLinkActive]="['is-active']" routerLink="/maintenancelogin/work"><mat-icon aria-hidden="false" aria-label="Example home icon">work_outline</mat-icon><div class="space">Work Order</div></a>
+      
+      </mat-nav-list><mat-divider></mat-divider>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <mat-toolbar class="toolbar">
+          <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" class="but" (click)="ncreate()">
+            <mat-icon>add</mat-icon>
+          </button>
+        </mat-toolbar>
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>Order Number</th>
+              <th>Order Type</th>
+              <th>Description</th>
+              <th>Date</th>
+              <th>Notification no</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let sale of leavearray">
+                <td>{{sale.AUFNR['_text']}}</td>
+                <td>{{sale.AUART['_text']}}</td>
+                <td>{{sale.KTEXT['_text']}}</td>
+                <td>{{sale.ERDAT['_text']}}</td>
+                <td>{{+sale.QMNUM['_text']}}</td>
+                <td>{{sale.ASTNR['_text']}}</td>
+                <td><button mat-button style="color: green;" (click)=" openDialog(sale)">
+                  <mat-icon aria-hidden="false" aria-label="Example home icon">create</mat-icon>
+                </button></td>
+            </tr>
+           
+          </tbody>
+        </table>
+      
+
+
+      </mat-sidenav-content>
+    </mat-sidenav-container>

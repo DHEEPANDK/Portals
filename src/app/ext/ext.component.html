@@ -1,0 +1,25 @@
+<div mat-dialog-title style="float: right; font-weight: 700; cursor: pointer;margin-top: -26px;margin-right: -20px;" (click)="close()"><mat-icon>clear</mat-icon></div>
+<table class="styled-table">
+    <thead>
+    <tr>
+        <th>Sales Document Number</th>
+        <th>Material Number</th>
+        <th>Document Date</th>
+        <th>Quantity</th>
+        <th>Net Value</th>
+        <th>Condition Unit</th>
+        <th>Net Price</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>{{+sale.VBELN['_text']}}</td>
+        <td>{{sale.MATNR['_text']}}</td>
+        <td>{{sale.AUDAT['_text']}}</td>
+        <td>{{sale.KWMENG['_text']}}</td>
+        <td>{{sale.NETWR['_text']}}</td>
+        <td>{{sale.KMEIN['_text']}}</td>
+        <td>{{sale.NETPR['_text']}}</td>
+    </tr>
+</tbody>
+</table>

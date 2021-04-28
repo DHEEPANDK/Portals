@@ -1,0 +1,112 @@
+<ngx-spinner
+    bdColor="rgba(0,0,0,0.8)"
+    size="medium"
+    color="whitesmoke"
+    type="ball-clip-rotate-multiple"
+   >
+  <p style="font-size: 20px; color: whitesmoke">Updating...</p>
+</ngx-spinner>
+<html>
+<style>
+input[type=text], select {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  margin-left:60px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=date] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  margin-left:60px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+h3{
+padding-left : 200px;
+}
+
+.sy{
+color:white;
+}
+.mat-toolbar span{
+    margin-left: 83px;
+}
+
+.button {
+  background-color: #628cc9; /* Green */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 6px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 40px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #628cc9;
+}
+.button1:hover {
+  background-color: #628cc9;
+  color: white;
+}
+
+</style>
+<body>
+
+    <mat-toolbar color="primary">
+       <span>Update Notifications</span>
+      </mat-toolbar>
+
+<div>
+  
+    <label for="fname">Notification Id<span class="sy">....</span></label>
+    <input type="text" id="nid" name="firstname" value="{{sale.QMNUM['_text']}}"><br/>
+
+     <label for="country">Notification  type</label>
+    <select id="typ" name="country" value="{{tp}}">
+      <option value="M1">Preventive</option>
+      <option value="M2">Breakdown</option>
+    </select><br/>
+
+    <label for="lname" >Equipment id<span class="sy">.....</span></label>
+    <input type="text" id="eid" name="lastname" value="{{+sale.EQUNR['_text']}}"><br/>
+      
+      <label for="lname" >Date<span class="sy">...................</span></label>
+    <input type="date" id="dat" name="lastname" value="{{sale.QMDAT['_text']}}"><br/>
+    
+    <label for="lname" >Description<span class="sy">.......</span></label>
+    <input type="text" id="desc" name="lastname" value="{{sale.QMTXT['_text']}}"><br/>
+    
+    <label for="lname">Status<span class="sy">...............</span></label>
+    <input type="text" id="status" name="lastname" value="{{sale.MSAUS['_text']}}"><br/>
+   
+    <div mat-dialog-actions>
+        <button class="button button1" (click) = "updt1()">Update</button>
+        <button class="button button1" mat-button mat-dialog-close>Back</button>
+      </div> 
+</div>
+
+</body>
+</html>

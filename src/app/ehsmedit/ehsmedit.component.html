@@ -1,0 +1,147 @@
+<ngx-spinner
+    bdColor="rgba(0,0,0,0.8)"
+    size="medium"
+    color="whitesmoke"
+    type="ball-clip-rotate-multiple"
+   >
+  <p style="font-size: 20px; color: whitesmoke">Updating...</p>
+</ngx-spinner>
+<html>
+<style>
+input[type=text], select {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  margin-left:60px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=date] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  margin-left:60px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+h3{
+padding-left : 200px;
+}
+
+.sy{
+color:white;
+}
+.mat-toolbar span{
+    margin-left: 111px;
+}
+
+.button {
+  background-color: #628cc9; /* Green */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 6px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 40px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #628cc9;
+}
+.button1:hover {
+  background-color: #628cc9;
+  color: white;
+}
+
+</style>
+<body *ngIf="show">
+
+    <mat-toolbar color="primary">
+       <span>Update Incident</span>
+      </mat-toolbar>
+
+<div>
+  
+    <label for="fname">Incident Number<span class="sy">..</span></label>
+    <input type="text" id="recn" name="firstname" value="{{+sale.RECN['_text']}}"><br/>
+
+     
+    
+    <label for="lname">Date<span class="sy">......................</span></label>
+    <input type="date" id="crdat" name="lastname" value="{{sale.CRDAT['_text']}}"><br/>
+      
+    <label for="lname">Description<span class="sy">...........</span></label>
+    <input type="text" id="evdesc" name="lastname" value="{{sale.EVDESC['_text']}}"><br/>
+
+    <label for="lname">Equipment no<span class="sy">.......</span></label>
+    <input type="text" id="equnr" name="lastname" value="{{+sale.EQUNR['_text']}}"><br/>
+
+    <label for="lname">Equipment desc<span class="sy">....</span></label>
+    <input type="text" id="eqdesc" name="lastname" value="{{sale.EQDESC['_text']}}"><br/>
+    
+    <label for="lname">Status<span class="sy">....................</span></label>
+    <input type="text" id="result" name="lastname" value="{{sale.INVRESULT['_text']}}"><br/>
+   
+    <div mat-dialog-actions>
+        <button class="button button1" (click) = "updt1()">Update</button>
+        <button class="button button1" mat-button mat-dialog-close>Back</button>
+      </div> 
+</div>
+
+</body>
+
+
+<!----create------->
+
+<body *ngIf="show1">
+
+  <mat-toolbar color="primary">
+     <span>Create Incident</span>
+    </mat-toolbar>
+
+<div>
+
+    
+    <label for="lname">Date<span class="sy">......................</span></label>
+    <input type="date" id="crdat" name="lastname" ><br/>
+      
+    <label for="lname">Description<span class="sy">...........</span></label>
+    <input type="text" id="evdesc" name="lastname" ><br/>
+
+    <label for="lname">Equipment no<span class="sy">.......</span></label>
+    <input type="text" id="equnr" name="lastname" ><br/>
+
+    <label for="lname">Equipment desc<span class="sy">....</span></label>
+    <input type="text" id="eqdesc" name="lastname" ><br/>
+    
+    <label for="lname">Status<span class="sy">....................</span></label>
+    <input type="text" id="result" name="lastname" ><br/>
+
+ 
+  <div mat-dialog-actions>
+      <button class="button button1" (click) = "crt()">Create</button>
+      <button class="button button1" mat-button mat-dialog-close>Back</button>
+    </div> 
+</div>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<body class="bdy">
+    <div class="dropdwn">
+        <nav>
+         <img src="assets/logo.png" class="logo">
+         <h4>CUSTOMER PROFILE</h4>
+         <div>
+         <a routerLink = "/customerlogin" class="logout_btn">LogOut</a>
+        </div>
+        </nav>
+    </div>
+    <div class="container-contact100">
+            <div class="wrap-contact100">
+                <form >
+                    <table border="0">
+                        <tr><td>Customer id</td><td>:</td><b>{{id}}</b></tr>
+                        <tr><td>Customer name</td><td>:</td><b>{{name}}</b></tr>
+                        <tr><td>Phone</td><td>:</td><b>{{phone}}</b></tr>
+                        <tr><td>City</td><td>:</td><b>{{city}}</b></tr>
+                        <tr><td>Postal code</td><td>:</td><b>{{pcode}}</b></tr>
+                    </table>
+                    
+                    <div class="container-contact100-form-btn">
+                        <a routerLink = "/customerlogin/customerdashboard/profile/update" class="contact100-form-btn">Edit</a>
+                        <a routerLink = "/customerlogin/customerdashboard" class="contact100-form-btn">Back</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+    
+     
+    

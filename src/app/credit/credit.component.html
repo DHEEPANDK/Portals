@@ -1,0 +1,71 @@
+
+<ngx-spinner
+bdColor="rgba(0,0,0,0.8)"
+size="medium"
+color="whitesmoke"
+type="ball-clip-rotate-multiple"
+>
+<p style="font-size: 20px; color: whitesmoke">Fetching details...</p>
+</ngx-spinner>
+<html>
+
+<body>
+    <div class="dropdwn">
+        <nav>
+         <img src="assets/logo.png" class="logo">
+         <h4>CREDIT MEMO</h4>
+         <div class="dd">
+            <ul>
+                <li>
+                    <button mat-button [matMenuTriggerFor]="menu">
+                        <mat-icon>account_circle</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu" xPosition="after">
+                        <button mat-menu-item (click)="bck()">
+                            <mat-icon>exit_to_app</mat-icon>
+                            Sign out
+                        </button>
+                    </mat-menu>
+                </li>
+            </ul>
+        </div>
+        </nav>
+    </div>
+<table class="styled-table">
+    <thead>
+    <tr>
+        <th>SNO</th>
+       
+        <th>Departure Country</th>
+        <th>Short text about sales item</th>
+        <th>Sales Document</th>
+        <th>Sales Document item</th>
+        <th>Actual invoiced quantity</th>
+       
+        <th>Material no</th>
+        
+        <th>Item no</th>
+        <th>Divison</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let sale of del; let i = index" class="k-alt">
+        <td>{{i + 1}}</td>
+        
+        <td>{{sale.ALAND['_text']}}</td>
+        <td>{{sale.ARKTX['_text']}}</td>
+        <td>{{+sale.AUBEL['_text']}}</td>
+        <td>{{+sale.AUPOS['_text']}}</td>
+        <td>{{sale.FKIMG['_text']}}</td>
+        
+        <td>{{sale.MATNR['_text']}}</td>
+        
+        <td>{{+sale.POSPA['_text']}}</td>
+        <td>{{sale.SPART['_text']}}</td>
+    </tr>
+</tbody>
+</table>
+<button (click) ="back()"  class="button button1">BACK</button> 
+<div class="dummy"></div>
+</body>
+</html>
